@@ -1,0 +1,40 @@
+module.exports = (sequelize, DataTypes) => {
+  const Doctor = sequelize.define('Doctor', {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    specialty: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    professional_registration: {
+      type: DataTypes.STRING(13),
+      unique: true,
+      allowNull: false,
+    },
+  });
+
+  Doctor.associate = (models) => {
+    Doctor.hasMany(models.Consultation, {
+      foreignKey: 'doctor_id',
+    });
+  };
+
+  return Doctor;
+};
