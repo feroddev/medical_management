@@ -42,8 +42,8 @@ module.exports = (sequelize, DataTypes) => {
     Consultation.belongsTo(models.Patient, {
       foreignKey: 'patient_id',
     });
-    Consultation.hasOne(models.MedicalRecord, {
-      foreignKey: 'consultationId',
+    Consultation.hasOne(models.MedicalResults, {
+      foreignKey: 'consultation_id',
     });
   };
   

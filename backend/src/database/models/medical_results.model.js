@@ -7,22 +7,22 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
     },
     examination_result: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     diagnosis: {
-      type: DataTypes.STRING(),
+      type: DataTypes.STRING,
       allowNull: false,
     },
     treatment: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     prescription: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
-    consultationId: {
+    consultation_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
 
   MedicalResults.associate = (models) => {
     MedicalResults.belongsTo(models.Consultation, {
-      foreignKey: 'consultationId',
+      foreignKey: 'consultation_id',
     });
   };
 

@@ -26,6 +26,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      image: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
       professional_registration: {
         type: Sequelize.STRING(13),
         unique: true,

@@ -9,7 +9,6 @@ module.exports = (sequelize, DataTypes) => {
     patientId: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      field: 'patient_id',
       references: {
         model: 'Patient',
         key: 'id',
@@ -27,16 +26,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
-    createdAt: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      field: 'created_at',
-    },
-    updatedAt: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      field: 'updated_at',
-    },
+  }, {
+    tableName: 'notifications',
+    timestamps: true,
+    underscored: true,
   });
 
   Notification.associate = (models) => {

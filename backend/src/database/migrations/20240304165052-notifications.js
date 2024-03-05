@@ -9,14 +9,15 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
       },
-      patientId: {
+      patient_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        field: 'patient_id',
         references: {
           model: 'patients',
           key: 'id',
         },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
       },
       title: {
         type: Sequelize.STRING,
@@ -29,17 +30,21 @@ module.exports = {
       read: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
+        defaultValue: false,
       },
-      createdAt: {
+      created_at: {
         type: Sequelize.DATE,
         allowNull: false,
-        field: 'created_at',
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
-      updatedAt: {
+      updated_at: {
         type: Sequelize.DATE,
         allowNull: false,
-        field: 'updated_at',
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
+    }, {
+      timestamps: true,
+      underscored: true,
     });
   },
 

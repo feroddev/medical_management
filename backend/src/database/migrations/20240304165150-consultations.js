@@ -16,6 +16,8 @@ module.exports = {
           model: 'patients',
           key: 'id',
         },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
       },
       datetime: {
         type: Sequelize.DATE,
@@ -35,6 +37,8 @@ module.exports = {
           model: 'doctors',
           key: 'id',
         },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
       },
     });
   },

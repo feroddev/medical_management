@@ -49,7 +49,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'patient_id',
     });
     Patient.hasMany(models.Notification, {
-      foreignKey: 'patientId',
+      foreignKey: 'patient_id',
     });
   };
 

@@ -44,6 +44,8 @@ await queryInterface.createTable('patients', {
       model: 'address',
       key: 'id',
     },
+    onUpdate: 'CASCADE',
+    onDelete: 'CASCADE',
   },
 });
 

@@ -10,28 +10,30 @@ module.exports = {
         primaryKey: true,
       },
       examination_result: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       diagnosis: {
-        type: Sequelize.STRING(),
+        type: Sequelize.STRING,
         allowNull: false,
       },
       treatment: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       prescription: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
-      consultationId: {
+      consultation_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
           model: 'consultations',
           key: 'id',
         },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
       },
     });
 
