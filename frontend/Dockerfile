@@ -14,4 +14,4 @@ RUN npm install
 COPY . .
 
 # Comando para compilar o projeto (substitua este comando pelo comando real necessário para compilar o seu frontend)
-CMD ["npm", "run", "build"]
+# CMD ["npm", "run", "build"]
