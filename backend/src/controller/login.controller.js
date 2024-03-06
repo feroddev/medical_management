@@ -13,7 +13,14 @@ const doctor = async (req, res) => {
   return res.status(httpMap(status)).json(data);
 };
 
+const patient = async (req, res) => {
+  const { email, password } = req.body;
+  const { status, data } = await loginService.loginPatient(email, password);
+  return res.status(httpMap(status)).json(data);
+};
+
 module.exports = {
   admin,
   doctor,
+  patient,
 };
