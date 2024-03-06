@@ -33,6 +33,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
   }, {
+    underscored: true,
     timestamps: false,
     tableName: 'doctors',
   });
@@ -40,6 +41,9 @@ module.exports = (sequelize, DataTypes) => {
   Doctor.associate = (models) => {
     Doctor.hasMany(models.Consultation, {
       foreignKey: 'doctor_id',
+      as: 'consultations',
+      onDelete: 'CASCADE',
+      onUpdate: 'CASCADE',
     });
   };
 

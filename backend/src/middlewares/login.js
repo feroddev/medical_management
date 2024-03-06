@@ -15,9 +15,7 @@ const validateLogin = (req, res, next) => {
 
   const passwordRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*()-_=+{};:,<.>]).{8,}$/;
   if (!passwordRegex.test(password)) {
-    return res.status(400).json({
-      message: 'Incorrect username or password',
-    });
+    return res.status(400).json({ message: 'Incorrect username or password' });
   }
 
   next();

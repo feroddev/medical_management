@@ -1,5 +1,5 @@
-const loginRoute = require("./login");
+const loginRoute = require('./login');
 
 module.exports = {
-  loginRoute
+  loginRoute,
 };

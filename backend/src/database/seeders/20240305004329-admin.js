@@ -5,7 +5,7 @@ const SALT_ROUNDS = 10;
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('admin', [{
+    await queryInterface.bulkInsert('admins', [{
       name: 'Felipe Rodrigues',
       email: 'felipe@medicalapp.com',
       password: bcrypt.hashSync('123456Fr!', SALT_ROUNDS)
@@ -17,6 +17,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('admin', null, {});
+    await queryInterface.bulkDelete('admins', null, {});
   }
 };
