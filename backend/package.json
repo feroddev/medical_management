@@ -7,7 +7,8 @@
     "start": "nodemon /src/server.js",
     "drop": "env $(cat .env) npx sequelize-cli db:drop",
     "migrate": "env $(cat .env) npx sequelize-cli db:create && env $(cat .env) npx sequelize-cli db:migrate",
-    "seed": "env $(cat .env) npx sequelize-cli db:seed:all"
+    "seed": "env $(cat .env) npx sequelize-cli db:seed:all",
+    "db:reset": "npm run drop && npm run migrate && npm run seed"
   },
   "keywords": [],
   "author": "",

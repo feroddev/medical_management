@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Expõe a porta 3000 para acesso externo
-EXPOSE 3000
+EXPOSE 3001
 
 # Comando para iniciar o servidor
 CMD ["npm", "start"]
