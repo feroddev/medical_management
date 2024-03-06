@@ -32,6 +32,9 @@ module.exports = (sequelize, DataTypes) => {
       unique: true,
       allowNull: false,
     },
+  }, {
+    timestamps: false,
+    tableName: 'doctors',
   });
 
   Doctor.associate = (models) => {

@@ -1,15 +1,18 @@
 'use strict';
 
+const bcrypt = require('bcryptjs');
+const SALT_ROUNDS = 10;
+
 module.exports = {
   async up (queryInterface, Sequelize) {
     await queryInterface.bulkInsert('admin', [{
       name: 'Felipe Rodrigues',
       email: 'felipe@medicalapp.com',
-      password: '123456Fr!'
+      password: bcrypt.hashSync('123456Fr!', SALT_ROUNDS)
     }, {
       name: 'Bruno Santos',
       email: 'bruno@medicalapp.com',
-      password: 'Bs@senh4'
+      password: bcrypt.hashSync('123456Bs!', SALT_ROUNDS)
     }], {timestamps: false});
   },
 

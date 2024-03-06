@@ -30,6 +30,9 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id',
       },
     },
+  }, {
+    timestamps: false,
+    tableName: 'medical_results',
   });
 
   MedicalResults.associate = (models) => {
