@@ -54,6 +54,10 @@ module.exports = (sequelize, DataTypes) => {
     Patient.hasMany(models.Notification, {
       foreignKey: 'patient_id',
     });
+    Patient.hasOne(models.Address, {
+      foreignKey: 'id',
+      as: 'address',
+    });
   };
 
   return Patient;

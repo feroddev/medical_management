@@ -1,11 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-module.exports = (user, tokenVerify = undefined) => {
-  if (tokenVerify) {
-    const decoded = jwt.verify(tokenVerify, process.env.JWT_SECRET);
-    return decoded;
-  }
-
+module.exports = (user) => {
   const token = jwt.sign({ 
     sub: user.id,
     role: user.role,
