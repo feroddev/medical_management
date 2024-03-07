@@ -42,6 +42,9 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id',
       },
     },
+  }, {
+    timestamps: false,
+    tableName: 'patients',
   });
 
   Patient.associate = (models) => {
@@ -50,6 +53,10 @@ module.exports = (sequelize, DataTypes) => {
     });
     Patient.hasMany(models.Notification, {
       foreignKey: 'patient_id',
+    });
+    Patient.hasOne(models.Address, {
+      foreignKey: 'id',
+      as: 'address',
     });
   };
 

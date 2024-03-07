@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Admin = sequelize.define('Admin', {
+  const admin = sequelize.define('admin', {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -19,9 +19,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-      timestamps: false,
-      tableName: 'admin',
-    },
-  );
-  return Admin;
+  }, {
+    timestamps: false, 
+    tableName: 'admins',
+  });
+
+  return admin;
 };

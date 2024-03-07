@@ -34,6 +34,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
+  }, {
+    timestamps: false,
+    tableName: 'address',
   });
 
   return Address;

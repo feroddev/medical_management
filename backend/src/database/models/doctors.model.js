@@ -32,11 +32,18 @@ module.exports = (sequelize, DataTypes) => {
       unique: true,
       allowNull: false,
     },
+  }, {
+    underscored: true,
+    timestamps: false,
+    tableName: 'doctors',
   });
 
   Doctor.associate = (models) => {
     Doctor.hasMany(models.Consultation, {
       foreignKey: 'doctor_id',
+      as: 'consultations',
+      onDelete: 'CASCADE',
+      onUpdate: 'CASCADE',
     });
   };
 
